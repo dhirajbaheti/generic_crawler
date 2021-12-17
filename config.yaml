@@ -1,0 +1,41 @@
+step_config:
+### Website 1
+  url: https://www.sec.gov/edgar/searchedgar/companysearch.html
+  act1: {"type": "search",
+         "search_text": "ABC, Inc.",
+         "searchType": "id",
+         "searchValue": "company",
+         "submitType": "id",
+         "submitValue": "search_button"
+        }
+  act2: {"type": "getlinks",
+         "searchType": "id",
+         "searchValue": "documentsbutton",
+         "filterContent": False
+        }
+  act3: {"type": "download",
+         "searchType": "regex",
+         "searchValue": "/Archives/edgar/data/"
+         }
+
+#### Website 2
+#  url: https://www.iana.org/domains/reserved
+#  act1: {"type": "download",
+#         "searchType": "regex",
+#         "searchValue": "/domains/root/db/"
+#         }
+
+#### Website 3
+#  url: https://www.aer.gov.au/publications
+#  act1: {"type": "getlinks",
+#         "searchType": "regex",
+#         "searchValue": "-reporting",
+#         "filterContent": True,
+#         "filterTag": "table",
+#         "filterAttr": "class",
+#         "filterValue": "views-table cols-3 table-striped table table-striped",
+#        }
+#  act2: {"type": "download",
+#         "searchType": "regex",
+#         "searchValue": "/system/files.*.pdf"
+#         }
